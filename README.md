@@ -5,3 +5,4 @@ Requirements:
 - Python 3.12.2
 - PyTorch
 - NiBabel
+- json
