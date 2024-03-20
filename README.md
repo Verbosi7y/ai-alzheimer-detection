@@ -4,5 +4,10 @@ An AI Project for AI4ALL
 Requirements:
 - Python 3.12.2
 - PyTorch
+- Pandas
+- Numpy
+- PIL (Pillow)
+- Scipy
 - NiBabel
+- openpyxl
 - json
