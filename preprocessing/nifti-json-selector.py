@@ -23,7 +23,7 @@ def dataframe_to_dict(df, iter, allowConverted=False):
 
     for i, row in df.iterrows():
         if not iter: break
-        if not allowConverted and row['Group'] == 'Converted': continue
+        #if not allowConverted and row['Group'] == 'Converted': continue
 
         subject_id = row['Subject ID']
         mri_id = row["MRI ID"]
@@ -45,12 +45,17 @@ def dataframe_to_dict(df, iter, allowConverted=False):
     return samples
 
 if __name__ == "__main__":
+    # .xlsx file from OASIS-2
     longitudinal_filename = "oasis_longitudinal_demographics.xlsx"
+    
+    # .json file name to be written to
     json_dir = "sample_demographics.json"
-    sample_count = 5
 
     excel_df = read_excel(longitudinal_filename)
-    samples = dataframe_to_dict(excel_df, sample_count)
+    shape = excel_df.shape
+
+    columns = shape[0]
+
+    samples = dataframe_to_dict(excel_df, columns)
 
     write_json(samples, json_dir)
-
