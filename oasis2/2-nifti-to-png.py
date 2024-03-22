@@ -26,9 +26,9 @@ def z_slicer(image, output_dir):
     # (x, y, z, channel)
     channel_data = image[:, :, :, 0] # channel 0, representing grayscale contrast channel value
 
-    # we have 128 Z layers but we only want every 4 layers starting from z = 8 and ending at z = 112
+    # we have 128 Z layers
     # we can discard information early and later on
-    for i in range(8, 112 + 1):
+    for i in range(128):
         # extract slice
         slice_data = channel_data[:, :, i] # (x, y, z); we only need the slice from the z-axis
         
