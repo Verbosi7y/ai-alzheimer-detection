@@ -9,5 +9,6 @@ Requirements:
 - PIL (Pillow)
 - Scipy
 - NiBabel
+- matplotlib
 - openpyxl
 - json
