@@ -8,6 +8,8 @@ class AlzheimerResNet(nn.Module):
         self.features = nn.Linear(self.model.fc.in_features, num_classes)
 '''
 
+
+# Unused
 class AlzheimerDataset(torch.utils.data.Dataset):
     def __init__(self, images, labels, transform=None):
         self.images = images
