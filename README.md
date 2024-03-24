@@ -1,4 +1,4 @@
-# Early, Accuracy, and Efficient Detection of Alzheimer's Disease through Artificial Intelligence Project
+# Early, Accuracy, and Efficient Detection of Alzheimer's Disease through Artificial Intelligence
 An AI Project for AI4ALL
 
 
