@@ -44,11 +44,23 @@ class Statistics():
 
         return (labels, sizes)
 
+
     @staticmethod
-    # CDR Distribution before data augmentation
+    # Create Pie Chart Plot for classification of samples
     def pieChartClassificationPlot(sample, title):
         plt.pie(sample[1], labels=sample[0], autopct='%1.1f%%')
         plt.title(title)
+        plt.show()
+
+
+    @staticmethod
+    # Create Bar Plot for classification of samples
+    def barClassificationPlot(sample, title, x_label, y_label):
+        plt.bar(sample.keys(), sample.values())
+        plt.title(title)
+        plt.ylabel(x_label)
+        plt.xlabel(y_label)
+        plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
         plt.show()
 
 
