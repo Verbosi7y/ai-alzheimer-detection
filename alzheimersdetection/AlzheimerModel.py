@@ -2,10 +2,8 @@
     AlzheimerModel.py -- Custom PyTorch Alzheimer CNN model.
     Authors: Darwin Xue
 '''
-import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torchvision.models
 
 
 class AlzheimerCNN(nn.Module):
