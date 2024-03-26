@@ -3,34 +3,21 @@
     Authors: Darwin Xue
 '''
 import torch
+import cv2
 import numpy as np
-
-from . import Dataset 
 
 
 class AlzheimerDataset(torch.utils.data.Dataset):
-    def __init__(self, npz_path, transform=None):
+    def __init__(self, npz_path, resize=False):
         self.npz_path = npz_path
-        self.transform = transform
+        self.xy = np.load(self.npz_path)
+        self.images = torch.from_numpy(np.expand_dims(self.xy["images"], axis=1)).float() / 255.0
+        self.labels = torch.from_numpy(self.xy["labels"])
+        self.data_size = self.images.shape[0]
 
     def __len__(self):
-        with np.load(self.npz_path) as data:
-            return len(data["images"])
+        return self.data_size
 
     def __getitem__(self, idx):
-        with np.load(self.npz_path) as data:
-            image = data["images"][idx]
-            label = data["labels"][idx]
-
-        # Apply transformations
-        if self.transform:
-            image = self.transform(image)
-            label = self.transform(label)
-
-        return image, label
-
-    def setTransform(self, transform): self.transform = transform
-
-    def load_dataset_npz(self, npz_path):
-        np_dataset = np.load(npz_path)
-        return np_dataset["images"], np_dataset["labels"]
+        if idx >= self.data_size: return None, None
+        return self.images[idx], self.labels[idx]

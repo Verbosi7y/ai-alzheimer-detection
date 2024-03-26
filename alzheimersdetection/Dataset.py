@@ -3,7 +3,7 @@
     Authors: Darwin Xue
 '''
 import numpy as np
-from skimage import io
+import skimage
 from PIL import Image
 
 import os
@@ -15,7 +15,7 @@ def load_dataset(classes, load_dir):
         class_path = os.path.join(load_dir, class_name)
 
         for image_filename in os.listdir(class_path):
-            img = io.imread(os.path.join(class_path, image_filename), as_gray=True)
+            img = skimage.io.imread(os.path.join(class_path, image_filename), as_gray=True)
             X.append(img)
             # 0 = Non Demented, 1 = Very Mild Demented, 2 = Mild Demented, 3 = Moderate Demented
             y.append(classes.index(class_name))
@@ -54,10 +54,7 @@ def save_images_npz(X, y, classes, parent_dir, npz_filename):
 
 
 def showImage(images, idx):
-    try:
-        io.imshow(images[idx])
-    except Exception as ex:
-        print(ex)
+      skimage.io.imshow(images[idx])
 
 
 def printShapes(images, labels):
