@@ -24,9 +24,9 @@ An AI Project for AI4ALL
 Steps to running the model:
 
 1. [Download](https://github.com/Verbosi7y/ai-alzheimer-detection/archive/refs/heads/main.zip) or run `git clone https://github.com/Verbosi7y/ai-alzheimer-detection.git`
-2. If anything is modified or missing in `...\alzheimer-project-ai4all\assets\Kaggle\alzheimer_mri_preprocessed_dataset`
+2. If anything is modified or missing in `...\alzheimer-project-ai4all\assets\Kaggle\alzheimer_mri_preprocessed_dataset\raw`
    - Download the [Kaggle Dataset](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset).
-   - If it is missing/modified, import the data from Kaggle into `...\assets\Kaggle\alzheimer_mri_preprocessed_dataset`.
+   - If it is missing/modified, import the data from Kaggle into `...\assets\Kaggle\alzheimer_mri_preprocessed_dataset\raw`.
    - Make sure the folders inside are labeled as `Non_Demented`, `Very_Mild_Demented`, `Mild_Demented`, `Moderate_Demented`.
 
 If any of these components or files are missing, the [repository](https://github.com/Verbosi7y/ai-alzheimer-detection) should contain the files necessary.
