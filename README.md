@@ -5,6 +5,7 @@ An AI Project for AI4ALL
 ## Requirements
 - Python 3.10.5 or newer
 - PyTorch
+- Torchvision
 - scikit-image
 - scikit-learn
 - imbalanced-learn
@@ -18,6 +19,8 @@ An AI Project for AI4ALL
 - matplotlib
 - openpyxl
 - json
+
+*if you have an Nvidia and supports CUDA 12.1, run `pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121` otherwise, run `pip3 install torchvision`
 
 
 ## Installation
@@ -38,6 +41,7 @@ If the repository is private, please contact me through [GitHub](https://github.
 1. Run `01_preprocessing.ipynb` in `notebooks`
 2. Follow the steps listed in the Notebook. Don't forget to enter the `parent_path`. I'm not exactly sure if it will run normally in MacOS and specifically, Apple Silicon.
 3. (❌) Run '02_alzheimers-detection.ipynb`. We will be training the model in this notebook.
+
 
 ## Credits
 [Alzheimer MRI Preprocessed Dataset](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset) by Sachin Kumar, Dr. Sourabh Shastri
