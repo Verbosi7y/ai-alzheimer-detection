@@ -38,7 +38,7 @@ If the repository is private, please contact me through [GitHub](https://github.
 
 
 ## Usage
-Google Colab: https://colab.research.google.com/github/Verbosi7y/ai-alzheimer-detection/blob/main/notebooks/Alzheimer%20Detection%20Collab.ipynb?authuser=1#scrollTo=k5WW9vN6Ofl5
+Google Colab: https://colab.research.google.com/github/Verbosi7y/ai-alzheimer-detection/blob/main/notebooks/Alzheimer%20Detection%20Collab.ipynb
 
 RUNNING LOCALLY:
 1. Run `01_preprocessing.ipynb` in `notebooks`
