@@ -1,8 +1,39 @@
-import os
-import json
 import matplotlib.pyplot as plt
+from collections import Counter
 
 
+def pieChartClassificationPlot(sample, title):
+    # ---------------------------------------------------
+    # Create Pie Chart Plot for classification of samples
+    # ---------------------------------------------------
+    plt.pie(sample[1], labels=sample[0], autopct='%1.1f%%')
+    plt.title(title)
+    plt.show()
+
+ 
+def barClassificationPlot(sample, title, x_label, y_label):
+    # ---------------------------------------------
+    # Create Bar Plot for classification of samples
+    # ---------------------------------------------
+    plt.bar(sample.keys(), sample.values())
+    plt.title(title)
+    plt.ylabel(x_label)
+    plt.xlabel(y_label)
+    plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
+    plt.show()
+
+
+def ad_plot_bar(sample, title):
+    # wrapper for barClassificationPlot
+    class_counts = Counter(sample["y"])
+    x_label = "CDR Rating"
+    y_label = "Number of Images"
+
+    barClassificationPlot(class_counts, title, x_label, y_label)
+
+
+
+"""
 class Statistics():
     def read_json(self, json_dir):
         json_data = {}
@@ -43,26 +74,7 @@ class Statistics():
                     sizes[3] += 1
 
         return (labels, sizes)
-
-
-    @staticmethod
-    # Create Pie Chart Plot for classification of samples
-    def pieChartClassificationPlot(sample, title):
-        plt.pie(sample[1], labels=sample[0], autopct='%1.1f%%')
-        plt.title(title)
-        plt.show()
-
-
-    @staticmethod
-    # Create Bar Plot for classification of samples
-    def barClassificationPlot(sample, title, x_label, y_label):
-        plt.bar(sample.keys(), sample.values())
-        plt.title(title)
-        plt.ylabel(x_label)
-        plt.xlabel(y_label)
-        plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
-        plt.show()
-
+    
 
 def main():
     # Run /preprocessing/nifti-json-selector.py first!
@@ -78,3 +90,4 @@ def main():
     sample = stats.adClassificationDistribution(sample)
 
     stats.pieChartClassificationPlot(sample)
+"""

@@ -6,10 +6,19 @@ import torch
 import numpy as np
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
+labels = ["Non_Demented",
+          "Very_Mild_Demented",
+          "Mild_Demented",
+          "Moderate_Demented"]
 
-def run_metrics(model, test_loader, classes, device):
+def run_metrics(model, test_loader, device, classes=None):
+    global labels
+    
     all_preds = []
     all_labels = []
+
+    if classes is None:
+        classes = labels
 
     # Evaluation loop
     with torch.no_grad():
