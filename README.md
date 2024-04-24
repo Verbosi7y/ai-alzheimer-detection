@@ -1,6 +1,7 @@
 # Early, Accuracy, and Efficient Detection of Alzheimer's Disease through Artificial Intelligence
 An AI Project for AI4ALL
 
+[Click here to run on Google Colaboratory](https://colab.research.google.com/github/Verbosi7y/ai-alzheimer-detection/blob/main/notebooks/Alzheimer%20Detection%20Collab.ipynb)
 
 ## Requirements
 - Python 3.10.5 or newer
@@ -38,8 +39,6 @@ If the repository is private, please contact me through [GitHub](https://github.
 
 
 ## Usage
-Google Colab: https://colab.research.google.com/github/Verbosi7y/ai-alzheimer-detection/blob/main/notebooks/Alzheimer%20Detection%20Collab.ipynb
-
 RUNNING LOCALLY:
 1. Run `01_preprocessing.ipynb` in `notebooks`
 2. Follow the steps listed in the Notebook. Don't forget to enter the `parent_path`. I'm not exactly sure if it will run normally in MacOS and specifically, Apple Silicon.
