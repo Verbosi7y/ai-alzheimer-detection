@@ -6,6 +6,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
+import numpy as np
+
 
 class AlzheimerCNN(nn.Module):
     def __init__(self, input_size=1):
@@ -110,8 +112,8 @@ def step9_train_model(model, param, loaders, device, model_path):
             print(f"Stopped at Epoch: {epoch}")
             break
 
-def predict(model, image):
-    image = torch.from_numpy(np.expand_dims(image, axis=1)).float() / 255.0
+def predict(model, np_image):
+    image = torch.from_numpy(np.expand_dims(np_image, axis=1)).float() / 255.0
 
     with torch.no_grad():
         output = model(image)
