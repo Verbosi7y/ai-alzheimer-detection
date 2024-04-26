@@ -1,5 +1,4 @@
 # Early, Accuracy, and Efficient Detection of Alzheimer's Disease through Artificial Intelligence
-An AI Project for AI4ALL
 
 [![Click here to run on Google Colaboratory](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Verbosi7y/ai-alzheimer-detection/blob/main/notebooks/Alzheimer%20Detection%20Collab.ipynb)
 
