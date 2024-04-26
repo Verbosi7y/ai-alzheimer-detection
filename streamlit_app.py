@@ -40,7 +40,7 @@ if 'img1' not in st.session_state:
     st.session_state.img3 = skimage.io.imread(fr'{parent_dir}/Mild_Demented/{st.session_state.img3}', as_gray=True)
     st.session_state.img4 = skimage.io.imread(fr'{parent_dir}/Moderate_Demented/{st.session_state.img4}', as_gray=True)
 
-st.title("Classifying Alzheimer's Disease")
+st.title("Classifying Alzheimer's Disease using Convolutional Neural Network")
 st.write("""
         *Alzheimer's Disease* is classified in terms of dementia severity.\n
         Pick a random image below to model the dementia rating.\n
