@@ -110,6 +110,13 @@ def step9_train_model(model, param, loaders, device, model_path):
             print(f"Stopped at Epoch: {epoch}")
             break
 
+def predict(model, image):
+    image = torch.from_numpy(image)
+
+    outputs = model(image)
+    _, predicted = torch.max(outputs, 1)
+
+    return predicted
 
 def set_device():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
