@@ -25,10 +25,10 @@ def label_mapping(result):
     
     return labels[result]
 
-img1 = np.array(Image.open(random.choice(os.listdir(fr'assets\raw\Non_Demented'))))
-img2 = np.array(Image.open(random.choice(os.listdir(fr'assets\raw\Very_Mild_Demented'))))
-img3 = np.array(Image.open(random.choice(os.listdir(fr'assets\raw\Mild_Demented'))))
-img4 = np.array(Image.open(random.choice(os.listdir(fr'assets\raw\Moderate_Demented'))))
+img1 = np.array(Image.open(random.choice(os.listdir(fr'assets\Kaggle\alzheimer_mri_preprocessed_dataset\raw\Non_Demented'))))
+img2 = np.array(Image.open(random.choice(os.listdir(fr'assets\Kaggle\alzheimer_mri_preprocessed_dataset\raw\Very_Mild_Demented'))))
+img3 = np.array(Image.open(random.choice(os.listdir(fr'assets\Kaggle\alzheimer_mri_preprocessed_dataset\raw\Mild_Demented'))))
+img4 = np.array(Image.open(random.choice(os.listdir(fr'assets\Kaggle\alzheimer_mri_preprocessed_dataset\raw\Moderate_Demented'))))
 
 st.title("Classifying Alzheimer's Disease")
 st.write("""
