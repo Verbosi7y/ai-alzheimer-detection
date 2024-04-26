@@ -113,7 +113,7 @@ def step9_train_model(model, param, loaders, device, model_path):
             break
 
 def predict(model, np_image):
-    image = torch.from_numpy(np.expand_dims(np_image, axis=1)).float() / 255.0
+    image = torch.from_numpy(np.expand_dims(np_image, axis=0)).float() / 255.0
 
     with torch.no_grad():
         output = model(image)
