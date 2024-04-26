@@ -4,7 +4,11 @@
 '''
 import torch
 import numpy as np
+import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score
+
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 labels = ["Non_Demented",
           "Very_Mild_Demented",
@@ -35,6 +39,7 @@ def run_metrics(model, test_loader, device, classes=None):
     all_labels = np.array(all_labels)
 
     # Calculate metrics for each class
+    metrics = {}
     for class_index in range(4):  # Replace num_classes with the actual number of classes
         class_preds = (all_preds == class_index)
         class_labels = (all_labels == class_index)
@@ -45,3 +50,31 @@ def run_metrics(model, test_loader, device, classes=None):
         class_name = classes[class_index]
 
         print(f"{class_name}({class_index}) - Accuracy: {accuracy}, Precision: {precision}, Recall: {recall}")
+        
+        metrics[class_name] = {
+            "Accuracy": accuracy,
+            "Precision": precision,
+            "Recall": recall
+        }
+
+    # Create a DataFrame from the dictionary
+    df = pd.DataFrame.from_dict(metrics, orient='index', columns=["Accuracy", "Precision", "Recall"])
+
+    # Create separate plots for Precision and Recall
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))  # Create a figure with 2 subplots
+
+    sns.barplot(x=df.index, y="Precision", data=df, ax=ax1)
+    ax1.set_xlabel("Class", fontsize=8)  # Reduce x-axis label text size
+    ax1.set_ylabel("Precision")
+    ax1.set_title("Precision per Class")
+    plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels for better readability
+
+    sns.barplot(x=df.index, y="Recall", data=df, ax=ax2)
+    ax2.set_xlabel("Class", fontsize=8)  # Reduce x-axis label text size
+    ax2.set_ylabel("Recall")
+    ax2.set_title("Recall per Class")
+    plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels for better readability
+
+    plt.tight_layout()  # Adjust spacing between subplots
+    plt.show()
+        
