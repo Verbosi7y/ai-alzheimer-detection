@@ -49,7 +49,7 @@ st.write("""
         """)
 
 img = image_select(
-    label="**Select an MRI scan of the brain**",
+    label="Select an MRI scan of the brain",
     images=[st.session_state.img1, st.session_state.img2, st.session_state.img3, st.session_state.img4],
     captions=["Non Demented", "Very Mild Demented", "Mild Demented" , "Moderate Demented"]
 )
