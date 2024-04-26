@@ -4,7 +4,7 @@ from streamlit_image_select import image_select
 import torch
 import numpy as np
 
-from PIL import Image
+import skimage
 
 import os, random
 from alzheimersdetection import AlzheimerModel
@@ -35,10 +35,10 @@ img2 = random.choice(os.listdir(fr'{parent_dir}/Very_Mild_Demented'))
 img3 = random.choice(os.listdir(fr'{parent_dir}/Mild_Demented'))
 img4 = random.choice(os.listdir(fr'{parent_dir}/Moderate_Demented'))
 
-img1 = np.array(Image.open(fr'{parent_dir}/Non_Demented/{img1}'))
-img2 = np.array(Image.open(fr'{parent_dir}/Very_Mild_Demented/{img2}'))
-img3 = np.array(Image.open(fr'{parent_dir}/Mild_Demented/{img3}'))
-img4 = np.array(Image.open(fr'{parent_dir}/Moderate_Demented/{img4}'))
+img1 = skimage.io.imread(fr'{parent_dir}/Non_Demented/{img1}', as_gray=True)
+img2 = skimage.io.imread(fr'{parent_dir}/Very_Mild_Demented/{img2}', as_gray=True)
+img3 = skimage.io.imread(fr'{parent_dir}/Mild_Demented/{img3}', as_gray=True)
+img4 = skimage.io.imread(fr'{parent_dir}/Moderate_Demented/{img4}', as_gray=True)
 
 st.title("Classifying Alzheimer's Disease")
 st.write("""
