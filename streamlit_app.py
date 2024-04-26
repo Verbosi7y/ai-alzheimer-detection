@@ -25,10 +25,16 @@ def label_mapping(result):
     
     return labels[result]
 
-img1 = np.array(Image.open(random.choice(os.listdir(fr'assets/Kaggle/alzheimer_mri_preprocessed_dataset/raw/Mild_Demented'))))
-img2 = np.array(Image.open(random.choice(os.listdir(fr'assets/Kaggle/alzheimer_mri_preprocessed_dataset/raw/Very_Mild_Demented'))))
-img3 = np.array(Image.open(random.choice(os.listdir(fr'assets/Kaggle/alzheimer_mri_preprocessed_dataset/raw/Mild_Demented'))))
-img4 = np.array(Image.open(random.choice(os.listdir(fr'assets/Kaggle/alzheimer_mri_preprocessed_dataset/raw/Moderate_Demented'))))
+parent_dir = fr'assets/Kaggle/alzheimer_mri_preprocessed_dataset/raw'
+img1 = random.choice(os.listdir(fr'{parent_dir}/Non_Demented'))
+img2 = random.choice(os.listdir(fr'{parent_dir}/Very_Mild_Demented'))
+img3 = random.choice(os.listdir(fr'{parent_dir}/Mild_Demented'))
+img4 = random.choice(os.listdir(fr'{parent_dir}/Moderate_Demented'))
+
+img1 = np.array(Image.open(fr'{parent_dir}/Non_Demented'/{img1}))
+img2 = np.array(Image.open(fr'{parent_dir}/Very_Mild_Demented'/{img2}))
+img3 = np.array(Image.open(fr'{parent_dir}/Mild_Demented'/{img3}))
+img4 = np.array(Image.open(fr'{parent_dir}/Moderate_Demented'/{img4}))
 
 st.title("Classifying Alzheimer's Disease")
 st.write("""
