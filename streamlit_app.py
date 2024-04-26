@@ -10,7 +10,7 @@ import os, random
 from alzheimersdetection import AlzheimerModel
 
 def predict(data):
-    model = torch.load(fr'models/best_ad_model.pt')
+    model = torch.load(fr'models/best_ad_model.pt', map_location=torch.device('cpu'))
     result = AlzheimerModel.predict(model, data)
 
     return result
