@@ -112,9 +112,10 @@ def step9_train_model(model, param, loaders, device, model_path):
 
 def predict(model, image):
     image = torch.from_numpy(image)
-
-    outputs = model(image)
-    _, predicted = torch.max(outputs, 1)
+    
+    with torch.no_grad():
+        output = model(image)
+        _, predicted = torch.max(output, 1)
 
     return predicted
 

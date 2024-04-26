@@ -8,9 +8,14 @@ from PIL import Image
 
 import os, random
 from alzheimersdetection import AlzheimerModel
+from alzheimersdetection.AlzheimerModel import AlzheimerCNN
 
 def predict(data):
-    model = torch.load(fr'models/best_ad_model.pt', map_location=torch.device('cpu'))
+    model = AlzheimerCNN()
+    checkpoint = torch.load(fr'models/best_ad_model.pt', map_location=torch.device('cpu'))
+    
+    model.load_state_dict(checkpoint)
+
     result = AlzheimerModel.predict(model, data)
 
     return result
