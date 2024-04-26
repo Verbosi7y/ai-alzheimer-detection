@@ -53,8 +53,13 @@ RUNNING LOCALLY:
 [A novel CNN architecture for accurate early detection and classification of Alzheimer’s disease using MRI data](https://www.nature.com/articles/s41598-024-53733-6) by A.M. El-Assy, Hanan M. Amer, H. M. Ibrahim, M. A. Mohamed
 
 
+Contributors
+------------
+- Developer: Verbosi7y
+
+
 ### License
 Apache License 2.0
 
 ### README.md
-Last Updated: March 24th, 2024
+Last Updated: April 26th, 2024
